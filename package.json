@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "serve": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start": "node server/index.js"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +21,10 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "cfenv": "^1.1.0",
     "core-js": "^2.5.4",
+    "express": "^4.16.3",
+    "helmet": "^3.13.0",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
