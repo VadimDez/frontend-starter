@@ -10,6 +10,10 @@ export class AppComponent {
   title = 'app';
 
   constructor(private mainService: MainService) {
+    this.mainService.getMe().subscribe((res: { accessToken: string }) => {
+      localStorage.setItem('token', res.accessToken);
+    });
+
     mainService.getPublic().subscribe((res: { status: string }) => {
       console.log('public', res);
     });

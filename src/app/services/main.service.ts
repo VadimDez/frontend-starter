@@ -19,4 +19,8 @@ export class MainService {
   public getProtected() {
     return this.http.get(`${ environment.API_URL }protected`);
   }
+
+  public getMe() {
+    return this.http.get(`/auth/me`);
+  }
 }
