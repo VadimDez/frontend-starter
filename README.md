@@ -1,5 +1,9 @@
 # Frontend Starter
 
+### Uses
+* Angular
+* IBM App ID
+
 ### Prepare
 
 Environment variables
