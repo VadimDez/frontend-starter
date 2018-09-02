@@ -1,8 +1,8 @@
 # Frontend Starter
 
 ### Uses
-* Angular
-* IBM App ID
+* [Angular](https://angular.io/)
+* [IBM App ID](https://www.ibm.com/cloud/app-id)
 
 ### Prepare
 
