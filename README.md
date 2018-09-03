@@ -3,6 +3,11 @@
 ### Uses
 * [Angular](https://angular.io/)
 * [IBM App ID](https://www.ibm.com/cloud/app-id)
+* Typescript
+* Express
+* Karma
+* Jasmine
+* Protractor
 
 ### Prepare
 
