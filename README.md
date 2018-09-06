@@ -33,6 +33,8 @@ npm run serve
 
 ### Run in production
 
+*Make sure .env is created*
+
 Before running in production you'll have to build the app by running
 
 ```
