@@ -31,6 +31,14 @@ To start serving on https://localhost:4200 run:
 npm run serve
 ```
 
+### Tests
+
+Run tests
+
+```
+npm run test
+```
+
 ### Run in production
 
 *Make sure .env is created*
