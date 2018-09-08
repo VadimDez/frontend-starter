@@ -35,6 +35,7 @@ npm run serve
 
 Run tests
 
+run with watcher
 ```
 npm run test
 ```
