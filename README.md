@@ -5,6 +5,7 @@
 * [IBM App ID](https://www.ibm.com/cloud/app-id)
 * Typescript
 * Express
+* SCSS
 * Karma
 * Jasmine
 * Protractor
