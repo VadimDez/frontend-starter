@@ -9,6 +9,7 @@
     background-color: $btn-color;
     color: #fff;
     padding: 8px 16px;
+    cursor: pointer;
 
     &:hover {
       background-color: transparentize($btn-color, 0.2);

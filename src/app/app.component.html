@@ -5,5 +5,11 @@
   </h1>
 </div>
 
-<button (click)="getProtected()" type="button">Make request to private endpoint</button>
 
+<h2>Public Request</h2>
+<button (click)="getPublic()" type="button">Make request to public endpoint</button>
+<span *ngIf="isLoadingPublic">Loading...</span>
+
+<h2>Private Request</h2>
+<button (click)="getProtected()" type="button">Make request to private endpoint</button>
+<span *ngIf="isLoadingPrivate">Loading...</span>
