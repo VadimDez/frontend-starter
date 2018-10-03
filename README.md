@@ -3,12 +3,12 @@
 ### Uses
 * [Angular](https://angular.io/)
 * [IBM App ID](https://www.ibm.com/cloud/app-id)
-* Typescript
-* Express
-* SCSS
-* Karma
-* Jasmine
-* Protractor
+* [Typescript](https://www.typescriptlang.org/)
+* [Express](https://expressjs.com/)
+* [SCSS](https://sass-lang.com/)
+* [Karma](https://karma-runner.github.io)
+* [Jasmine](https://jasmine.github.io/)
+* [Protractor](https://www.protractortest.org/#/)
 
 ### Prepare
 
