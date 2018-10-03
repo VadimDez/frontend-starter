@@ -56,3 +56,49 @@ and then run the app:
 ```
 npm start
 ```
+
+### Kubernetes
+Run:
+
+```
+ibmcloud ks cluster-config <cluster name>
+```
+
+Copy result, paste and hit enter
+
+
+##### Build image
+
+Build:
+```
+docker-compose build
+```
+
+Verify image is built:
+```
+docker images
+```
+
+tag the image:
+```
+docker tag backend-starter_web:latest registry.eu-de.bluemix.net/pr_firm/backend-starter_web:1
+```
+
+Ensure you're logged in before pushing
+```
+bx cr login
+```
+
+Push to the registry:
+```
+docker push registry.eu-de.bluemix.net/<namespace>/backend-starter_web:1
+```
+
+```
+kubectl run backend-deployment --image=registry.eu-de.bluemix.net/pr_firm/backend-starter_web:1
+```
+
+Expose
+```
+kubectl expose deployment/backend-deployment --type=NodePort --port=80 --name=backend-service --target-port=80
+```
