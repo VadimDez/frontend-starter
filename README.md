@@ -57,6 +57,17 @@ and then run the app:
 npm start
 ```
 
+### Docker
+To build image run:
+```
+bash build.sh
+```
+
+To run image:
+```
+bash run.sh
+```
+
 ### Kubernetes
 Run:
 
