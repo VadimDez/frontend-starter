@@ -82,17 +82,12 @@ Copy result, paste and hit enter
 
 Build:
 ```
-docker-compose build
+docker build --tag registry.ng.bluemix.net/<my_namespace>/frontend-starter:1 .
 ```
 
 Verify image is built:
 ```
 docker images
-```
-
-tag the image:
-```
-docker tag backend-starter_web:latest registry.eu-de.bluemix.net/pr_firm/backend-starter_web:1
 ```
 
 Ensure you're logged in before pushing
@@ -102,11 +97,11 @@ bx cr login
 
 Push to the registry:
 ```
-docker push registry.eu-de.bluemix.net/<namespace>/backend-starter_web:1
+docker push registry.eu-de.bluemix.net/<namespace>/frontend-starter:1
 ```
 
 ```
-kubectl run backend-deployment --image=registry.eu-de.bluemix.net/pr_firm/backend-starter_web:1
+kubectl run backend-deployment --image=registry.eu-de.bluemix.net/<namespace>/frontend-starter:1
 ```
 
 Expose
