@@ -82,7 +82,8 @@ Copy result, paste and hit enter
 
 Build:
 ```
-docker build --tag registry.ng.bluemix.net/<my_namespace>/frontend-starter:1 .
+// docker build --tag registry.<region>.bluemix.net/<my_namespace>/<repo_name>:<tag> .
+docker build --tag registry.eu-de.bluemix.net/<my_namespace>/frontend-starter:1 .
 ```
 
 Verify image is built:
@@ -100,11 +101,28 @@ Push to the registry:
 docker push registry.eu-de.bluemix.net/<namespace>/frontend-starter:1
 ```
 
+Verify that the image was pushed successfully by running the following command.
 ```
-kubectl run backend-deployment --image=registry.eu-de.bluemix.net/<namespace>/frontend-starter:1
+ibmcloud cr image-list
+```
+
+Start by running your image as a deployment
+```
+kubectl run frontend-deployment --image=registry.eu-de.bluemix.net/<namespace>/frontend-starter:1
 ```
 
 Expose
 ```
-kubectl expose deployment/backend-deployment --type=NodePort --port=80 --name=backend-service --target-port=80
+kubectl expose deployment/frontend-deployment --type=NodePort --port=3000 --name=frontend-service --target-port=3000
 ```
+
+To find the port used on that worker node, examine your new service:
+```
+kubectl describe service frontend-service
+```
+Take note of the "NodePort:" line as <nodeport>
+
+
+Run `bx cs workers <name-of-cluster>`, and note the public IP as <public-IP>.
+
+
