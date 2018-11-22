@@ -41,6 +41,12 @@ run with watcher
 npm run test
 ```
 
+### CI/CD pipeline
+
+* Build pipeline: simple
+* Test pipeline: use custom dockerimage: `node:8` with `npm i && npm test`
+* Deploy pipeline: simple
+
 ### Run in production
 
 *Make sure .env is created*
