@@ -41,6 +41,12 @@ run with watcher
 npm run test
 ```
 
+### CI/CD pipeline
+
+* Build pipeline: simple
+* Test pipeline: use custom dockerimage: `node:8` with `npm i && npm test`
+* Deploy pipeline: simple
+
 ### Run in production
 
 *Make sure .env is created*
@@ -126,3 +132,6 @@ Take note of the "NodePort:" line as <nodeport>
 Run `bx cs workers <name-of-cluster>`, and note the public IP as <public-IP>.
 
 
+### Licence
+
+[MIT](https://tldrlegal.com/license/mit-license) © [Vadym Yatsyuk](https://github.com/vadimdez)
