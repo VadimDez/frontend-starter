@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --prod -c ${NG_ENV}",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "start:local": "npm run build && npm run start"
   },
   "private": true,
   "dependencies": {
