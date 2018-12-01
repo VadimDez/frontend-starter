@@ -1,23 +1,34 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
+import { of } from "rxjs";
+import { catchError } from "rxjs/operators";
 import {
   HttpInterceptor,
   HttpHandler,
   HttpRequest
-} from '@angular/common/http';
+} from "@angular/common/http";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    const authToken = localStorage.getItem('token');
+    let r = req.clone();
+    const authToken = localStorage.getItem("token");
 
-    if (!authToken) {
-      return next.handle(req);
+    if (authToken) {
+      r = req.clone({
+        headers: req.headers.set("Authorization", `Bearer ${authToken}`)
+      });
     }
 
-    const authReq = req.clone({
-      headers: req.headers.set('Authorization', `Bearer ${ authToken }`)
-    });
-
-    return next.handle(authReq);
+    return next.handle(r).pipe(
+      catchError(e => {
+        // Ypu could implement something like this to always redirect to login page on 401;
+        /*
+        if (e instanceof HttpErrorResponse && e.status === 401) {
+          MainService.goToLogin();
+        }
+        */
+        return of(e);
+      })
+    );
   }
 }
