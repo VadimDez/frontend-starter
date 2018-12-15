@@ -15,10 +15,10 @@
 
 Environment variables
 
-- Navigate to `server/` folder
-- Create a copy of `.env.example`
-- Rename it to `.env`
-- Replace values with yours
+1. Navigate to `server/` folder
+1. Create a copy of `.env.example`
+1. Rename it to `.env`
+1. Replace values with yours
 
 Install dependencies
 
