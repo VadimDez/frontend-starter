@@ -52,7 +52,12 @@ npm run tdd
 
 - Build pipeline:
 
-  - simple
+  - use custom dockerimage: `node:8`
+  - with script:
+
+  ```
+  npm install
+  ```
 
 - Test pipeline:
 
@@ -60,11 +65,33 @@ npm run tdd
   - with script:
 
   ```
-  npm i && npm test
+  apt-get update
+  apt-get install -y gconf-service libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxss1 libxtst6 libappindicator1 libnss3 libasound2 libatk1.0-0 libc6 ca-certificates fonts-liberation lsb-release xdg-utils wget
+  npm test
   ```
 
 - Deploy pipeline:
-  - simple (Don't forget to add runtime environment variables afterwards to the cloud foundry app)
+
+  - as first job - add "Build" job
+
+    - use custom dockerimage: `node:8`
+    - with script:
+
+    ```
+    nom run build
+    ```
+
+    - _Set env varibale NG*ENV to be *production\*_
+
+  - as second job - use "Rolling Deploy"
+    - with script:
+    ```
+    cf push $CF_APP
+    export CF_APP_NAME="$CF_APP"
+    export APP_URL=http://$(cf app $CF_APP_NAME | grep -e urls: -e routes: | awk '{print $2}')
+    ```
+
+- Don't forget to add runtime environment variables afterwards to the cloud foundry app
 
 ### Run in production
 
