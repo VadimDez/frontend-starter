@@ -81,7 +81,7 @@ npm run tdd
     nom run build
     ```
 
-    - _Set env varibale NG*ENV to be *production\*_
+    - *Set env varibale `NG_ENV` to be `production`*
 
   - as second job - use "Rolling Deploy"
     - with script:
