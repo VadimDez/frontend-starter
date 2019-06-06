@@ -52,7 +52,7 @@ npm run tdd
 
 - Build pipeline:
 
-  - use custom dockerimage: `node:8`
+  - use custom dockerimage: `node:10`
   - with script:
 
   ```
@@ -61,7 +61,7 @@ npm run tdd
 
 - Test pipeline:
 
-  - use custom dockerimage: `node:8`
+  - use custom dockerimage: `node:10`
   - with script:
 
   ```
@@ -74,7 +74,7 @@ npm run tdd
 
   - as first job - add "Build" job
 
-    - use custom dockerimage: `node:8`
+    - use custom dockerimage: `node:10`
     - with script:
 
     ```
