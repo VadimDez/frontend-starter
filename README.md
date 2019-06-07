@@ -10,6 +10,7 @@
 - [Karma](https://karma-runner.github.io)
 - [Jasmine](https://jasmine.github.io/)
 - [Protractor](https://www.protractortest.org/#/)
+- [Puppeteer](https://pptr.dev/)
 
 ### Prepare
 
