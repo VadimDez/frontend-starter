@@ -1,5 +1,7 @@
 # Frontend Starter
 
+[![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/VadimDez/frontend-starter&branch=master)
+
 ### Uses
 
 - [Angular](https://angular.io/)
@@ -81,7 +83,7 @@ npm run tdd
     nom run build
     ```
 
-    - *Set env varibale `NG_ENV` to be `production`*
+    - _Set env varibale `NG_ENV` to be `production`_
 
   - as second job - use "Rolling Deploy"
     - with script:
