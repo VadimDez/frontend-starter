@@ -10,7 +10,7 @@ const vars = require('./vars');
 
 const appEnv = cfenv.getAppEnv();
 
-const PORT = appEnv.isLocal ? 3000 : appEnv.port;
+const PORT = appEnv.isLocal ? vars.port : appEnv.port;
 const CALLBACK_URL = '/auth/callback';
 const LANDING_PAGE_URL = '/';
 

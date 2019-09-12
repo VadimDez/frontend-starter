@@ -5,19 +5,18 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class MainService {
-
   constructor(private http: HttpClient) {}
 
   static goToLogin() {
-    window.location.replace(`${ window.location.origin }/login`);
+    window.location.replace(`${window.location.origin}/login`);
   }
 
   public getPublic() {
-    return this.http.get(`${ environment.API_URL }test`);
+    return this.http.get(`${environment.API_URL}health`);
   }
 
   public getProtected() {
-    return this.http.get(`${ environment.API_URL }protected`);
+    return this.http.get(`${environment.API_URL}protected`);
   }
 
   public getMe() {

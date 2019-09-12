@@ -4,8 +4,10 @@ import { catchError } from 'rxjs/operators';
 import {
   HttpInterceptor,
   HttpHandler,
-  HttpRequest
+  HttpRequest,
+  HttpErrorResponse
 } from '@angular/common/http';
+import { MainService } from './main.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
