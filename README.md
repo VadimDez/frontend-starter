@@ -13,6 +13,7 @@
 - [Jasmine](https://jasmine.github.io/)
 - [Protractor](https://www.protractortest.org/#/)
 - [Puppeteer](https://pptr.dev/)
+- [Ng-Bootstrap](https://ng-bootstrap.github.io/#/home)
 
 ### Prepare
 
@@ -190,6 +191,14 @@ kubectl describe service frontend-service
 Take note of the "NodePort:" line as <nodeport>
 
 Run `bx cs workers <name-of-cluster>`, and note the public IP as <public-IP>.
+
+### Styling
+`ng-bootstrap` is being used for the styling framework. [Documentation](https://ng-bootstrap.github.io/#/components/alert/examples)
+
+If you want to remove it (and use another styling framework),
+- Remove the `bootstrap` and `@ng-bootstrap/ng-bootstrap` dependencies in `package.json`
+- Remove the line `node_modules/bootstrap/dist/css/bootstrap.min.css` from the styles configuration in `angular.json`
+- Remove the components under `src/app/components` and the references in `app.component.html`
 
 ### Licence
 

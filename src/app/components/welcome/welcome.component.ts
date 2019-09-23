@@ -1,22 +1,22 @@
-import { Component } from "@angular/core";
-
-import { MainService } from "./services/main.service";
-import { ToastService } from './components/toast/toast.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { MainService } from 'src/app/services/main.service';
+import { ToastService } from '../toast/toast.service';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+  selector: 'app-welcome',
+  templateUrl: './welcome.component.html',
+  styleUrls: ['./welcome.component.scss']
 })
-export class AppComponent {
-  title = "frontend-starter";
+export class WelcomeComponent {
+  @Input() title = 'No Title';
   isLoadingPublic = false;
   isLoadingPrivate = false;
   publicResponse: any;
 
+
   constructor(
     private mainService: MainService,
-    private toastService: ToastService
+    private toastService: ToastService,
   ) {
     this.mainService.getMe().subscribe((res: { accessToken: string }) => {
       localStorage.setItem("token", res.accessToken);
@@ -24,26 +24,19 @@ export class AppComponent {
   }
 
   getPublic() {
-    this.isLoadingPublic = true;
     this.toastService.show('Info', 'Loading public endpoint...');
     this.mainService.getPublic().subscribe(
       (res: { status: string }) => {
         this.publicResponse = res;
-        this.toastService.show('Info', 'Loading public endpoint finished successfully', 'success');
-      },
-      () => {
-        this.isLoadingPublic = false;
-        this.toastService.show('Info', 'Loading public endpoint did not finish', 'danger');
       }
     );
   }
 
   getProtected() {
-    this.isLoadingPrivate = true;
+    this.toastService.show('Info', 'Loading private endpoint...');
     this.mainService.getProtected().subscribe(
       (res: { status: string }) => {
         console.log("protected", res);
-        this.isLoadingPrivate = false;
       },
       (err: any) => {
         this.isLoadingPrivate = false;
@@ -53,4 +46,6 @@ export class AppComponent {
       }
     );
   }
+
 }
+
