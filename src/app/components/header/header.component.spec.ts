@@ -22,4 +22,15 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render the navbar correctly', () => {
+    const compiled = fixture.debugElement.nativeElement;
+
+    expect(compiled.querySelector('nav').classList).
+      toContain('navbar-dark');
+    expect(compiled.querySelector('a.navbar-brand').textContent).
+      toMatch(/\w*Hello World\w*/);
+    expect(compiled.querySelector('img').src).
+      toContain('assets/garage-method.svg');
+  });
 });

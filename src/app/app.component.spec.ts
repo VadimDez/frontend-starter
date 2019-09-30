@@ -17,6 +17,14 @@ import {
 
 import { AppComponent } from './app.component';
 import { of } from 'rxjs';
+import { Component } from '@angular/core';
+
+@Component({selector: 'app-header', template: ''})
+class HeaderComponent {}
+@Component({selector: 'app-toast', template: ''})
+class ToastComponent {}
+@Component({selector: 'app-spinner', template: ''})
+class SpinnerComponent {}
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -28,7 +36,12 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, HttpClientTestingModule],
-      declarations: [AppComponent],
+      declarations: [
+        AppComponent,
+        HeaderComponent,
+        ToastComponent,
+        SpinnerComponent
+      ],
       providers: [MainService]
     })
       .compileComponents()
@@ -50,46 +63,4 @@ describe('AppComponent', () => {
     expect(component.title).toEqual('frontend-starter');
   });
 
-  it('should render title in a h1 tag', () => {
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain(
-      'Welcome to frontend-starter!'
-    );
-  });
-
-  it('should get public data', fakeAsync(async () => {
-    const data = { status: 'ok' };
-
-    spyOn(component, 'getPublic').and.callThrough();
-    const getPublicSpy = spyOn(mainService, 'getPublic').and.returnValue(
-      of(data)
-    );
-    fixture.detectChanges();
-    const btn = fixture.debugElement.query(By.css('button.public'));
-    btn.triggerEventHandler('click', null);
-    fixture.detectChanges();
-
-    await fixture.whenStable();
-    expect(component.publicResponse).toEqual(data);
-    expect(component.getPublic).toHaveBeenCalled();
-    expect(getPublicSpy).toHaveBeenCalled();
-  }));
-
-  it('should get protected data', fakeAsync(async () => {
-    const data = { status: 'ok' };
-
-    spyOn(component, 'getProtected').and.callThrough();
-    const getProtectedSpy = spyOn(mainService, 'getProtected').and.returnValue(
-      of(data)
-    );
-    fixture.detectChanges();
-    const btn = fixture.debugElement.query(By.css('button.private'));
-    btn.triggerEventHandler('click', null);
-    fixture.detectChanges();
-
-    await fixture.whenStable();
-    expect(component.getProtected).toHaveBeenCalled();
-    expect(getProtectedSpy).toHaveBeenCalled();
-  }));
 });
