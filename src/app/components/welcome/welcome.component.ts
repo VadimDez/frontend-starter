@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MainService } from 'src/app/services/main.service';
 import { ToastService } from '../toast/toast.service';
 
@@ -19,7 +19,7 @@ export class WelcomeComponent {
     private toastService: ToastService,
   ) {
     this.mainService.getMe().subscribe((res: { accessToken: string }) => {
-      localStorage.setItem("token", res.accessToken);
+      localStorage.setItem('token', res.accessToken);
     });
   }
 
@@ -36,7 +36,7 @@ export class WelcomeComponent {
     this.toastService.show('Info', 'Loading private endpoint...');
     this.mainService.getProtected().subscribe(
       (res: { status: string }) => {
-        console.log("protected", res);
+        console.log('protected', res);
       },
       (err: any) => {
         this.isLoadingPrivate = false;
