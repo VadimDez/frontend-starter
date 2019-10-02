@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'colors';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+body {
+    background: #f5f6fa;
+}
+
+.page {
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 0 0 1px 1px #D9DEE4, 0 1px 3px 0 rgba(0, 0, 0, 0.24);
+    padding: 15px 10px;
+    width: 100%;
+    height: 100vh;
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}

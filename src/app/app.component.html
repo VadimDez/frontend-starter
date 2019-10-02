@@ -1,18 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-
-
-<h2>Public Request</h2>
-<button (click)="getPublic()" type="button" class="public">Make request to public endpoint</button>
-<span *ngIf="isLoadingPublic">Loading...</span>
-
-<h2>Private Request</h2>
-<button (click)="getProtected()" type="button" class="private">Make request to private endpoint</button>
-<span *ngIf="isLoadingPrivate">Loading...</span>
-
-
+<app-header title="Frontend Starter"></app-header>
 <router-outlet></router-outlet>
+<app-toast aria-live="polite" aria-atomic="true"></app-toast>
