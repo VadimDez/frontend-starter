@@ -10,10 +10,6 @@ if (fs.existsSync(path.join(__dirname, ".env"))) {
     path: path.join(__dirname, ".env"),
     example: path.join(__dirname, ".env.example")
   });
-  require("dotenv-safe").load({
-    path: path.join(__dirname, ".env"),
-    sample: path.join(__dirname, ".env.example")
-  });
 }
 
 module.exports = {
