@@ -1,6 +1,6 @@
 # Frontend Starter
 
-[![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/VadimDez/frontend-starter&branch=master)
+[![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/VadimDez/frontend-starter&branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/VadimDez/frontend-starter.svg)](https://greenkeeper.io/)
 
 ### Uses
 
