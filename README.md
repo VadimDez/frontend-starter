@@ -155,7 +155,7 @@ docker images
 Ensure you're logged in before pushing
 
 ```
-bx cr login
+ibmcloud cr login
 ```
 
 Push to the registry:
@@ -190,7 +190,7 @@ kubectl describe service frontend-service
 
 Take note of the "NodePort:" line as <nodeport>
 
-Run `bx cs workers <name-of-cluster>`, and note the public IP as <public-IP>.
+Run `ibmcloud cs workers <name-of-cluster>`, and note the public IP as <public-IP>.
 
 ### Styling
 `ng-bootstrap` is being used for the styling framework. [Documentation](https://ng-bootstrap.github.io/#/components/alert/examples)
