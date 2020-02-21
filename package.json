@@ -24,7 +24,7 @@
     "@angular/platform-browser": "~9.0.0",
     "@angular/platform-browser-dynamic": "~9.0.0",
     "@angular/router": "~9.0.0",
-    "@ng-bootstrap/ng-bootstrap": "^5.3.0",
+    "@ng-bootstrap/ng-bootstrap": "^6.0.0",
     "bootstrap": "^4.4.1",
     "cfenv": "^1.2.2",
     "dotenv-safe": "^8.1.0",
