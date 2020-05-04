@@ -1,7 +1,7 @@
 FROM node:10
 
 # Change working directory
-WORKDIR "/app"
+WORKDIR /app
 
 # Update packages and install dependency packages for services
 RUN apt-get update \
