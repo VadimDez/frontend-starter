@@ -40,8 +40,9 @@ jobs:
           CI: true
         run: npm run test
 
+      - uses: browser-actions/setup-chrome@latest
+
       - name: Run e2e tests
-        uses: browser-actions/setup-chrome@latest
         env:
           CI: true
         run: npm run e2e
