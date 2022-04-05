@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MainService } from 'src/app/services/main.service';
+import { MainService, MeResource, PrivateResource, PublicResource } from 'src/app/services/main.service';
 import { ToastService } from '../toast/toast.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class WelcomeComponent {
     private mainService: MainService,
     private toastService: ToastService,
   ) {
-    this.mainService.getMe().subscribe((res: { accessToken: string }) => {
+    this.mainService.getMe().subscribe((res: MeResource) => {
       localStorage.setItem('token', res.accessToken);
     });
   }
@@ -26,7 +26,7 @@ export class WelcomeComponent {
   getPublic() {
     this.toastService.show('Info', 'Loading public endpoint...');
     this.mainService.getPublic().subscribe(
-      (res: { status: string }) => {
+      (res: PublicResource) => {
         this.publicResponse = res;
       }
     );
@@ -35,7 +35,7 @@ export class WelcomeComponent {
   getProtected() {
     this.toastService.show('Info', 'Loading private endpoint...');
     this.mainService.getProtected().subscribe(
-      (res: { status: string }) => {
+      (res: PrivateResource) => {
         console.log('protected', res);
       },
       (err: any) => {

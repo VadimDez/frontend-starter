@@ -8,7 +8,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() title = 'Hello World';
-  date: {year: number, month: number};
 
   constructor() {
   }

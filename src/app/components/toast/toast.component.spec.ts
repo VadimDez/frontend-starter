@@ -11,10 +11,10 @@ describe('ToastComponent', () => {
   // tslint:disable-next-line
   @Component({selector: 'ngb-toast', template: ''})
   class NgbToastComponent {
-    @Input() header;
-    @Input() autohide;
-    @Input() delay;
-    @Input() class;
+    @Input() header: any;
+    @Input() autohide: any;
+    @Input() delay: any;
+    @Input() class: any;
   }
 
   beforeEach(async(() => {

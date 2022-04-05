@@ -3,6 +3,16 @@ import { HttpClient } from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
 
+export interface PublicResource {
+  status: string
+}
+export interface PrivateResource {
+  status: string
+}
+export interface MeResource {
+  accessToken: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,14 +24,14 @@ export class MainService {
   }
 
   public getPublic() {
-    return this.http.get(`${environment.API_URL}health`);
+    return this.http.get<PublicResource>(`${environment.API_URL}health`);
   }
 
   public getProtected() {
-    return this.http.get(`${environment.API_URL}protected`);
+    return this.http.get<PrivateResource>(`${environment.API_URL}protected`);
   }
 
-  public getMe() {
-    return this.http.get(`/auth/me`);
+  public getMe()  {
+    return this.http.get<MeResource>(`/auth/me`);
   }
 }

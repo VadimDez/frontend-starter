@@ -16,7 +16,7 @@ export class ToastService {
     this.toasts.push({ header, body, classname: classes });
   }
 
-  remove(toast) {
+  remove(toast: any) {
     this.toasts = this.toasts.filter(t => t !== toast);
   }
 }
