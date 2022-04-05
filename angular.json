@@ -138,11 +138,13 @@
           "options": {
             "devServerTarget": "frontend-starter:serve",
             "watch": true,
-            "headless": true
+            "headless": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "frontend-starter:serve:production"
+              "devServerTarget": "frontend-starter:serve:production",
+              "watch": false,
+              "headless": true
             }
           }
         }
