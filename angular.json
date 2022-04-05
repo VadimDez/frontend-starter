@@ -138,7 +138,7 @@
           "options": {
             "devServerTarget": "frontend-starter:serve",
             "watch": true,
-            "headless": false
+            "headless": true
           },
           "configurations": {
             "production": {
