@@ -45,4 +45,4 @@ jobs:
       - name: Run e2e tests
         env:
           CI: true
-        run: npm run e2e
+        run: CHROMIUM_BIN=$(which chrome) npm run e2e
